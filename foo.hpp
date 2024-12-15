@@ -7,6 +7,15 @@
 
 std::vector< char > foo(std::list< Human >& people)
 {
-    // Twoja implementacja tutaj
-    return {};
+    std::vector<char> wektor;
+
+    for (auto& e : people) {
+        e.birthday();
+        if(e.isMonster()) 
+            wektor.push_back('n');
+        else 
+            wektor.push_back('y');
+    }
+    std::reverse(wektor.begin(), wektor.end());
+    return wektor;
 }
